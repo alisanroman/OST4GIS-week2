@@ -22,21 +22,31 @@
 
     ## Introduction
 
-    Refactor your week 1 homework assignment to leverage some of the Javascript functionality we have been learning about. We will start by improving the way we store data and the amount of times we call the L.marker method.
+    Refactor your week 1 homework assignment to leverage some of the Javascript functionality
+    we have been learning about. We will start by improving the way we store data
+    and the amount of times we call the L.marker method.
 
     ## Task 1: Data Storage
 
-    Let's consider a marker for a single restaurant point location. We could store information about that marker as an array ([element1, element2, element3...]). Your point location array should contain the following three elements in this order: 1. lat, 2. lng, 3. label.
+    Let's consider a marker for a single restaurant point location.
+    We could store information about that marker as an array ([element1, element2, element3...]).
+    Your point location array should contain the following three elements in this order:
+    1. lat, 2. lng, 3. label.
 
-    Create an array of arrays (an array that contains multiple arrays) to represent every restaurant in your restaurant data. Save this as variable "restaurantData".
+    Create an array of arrays (an array that contains multiple arrays)
+    to represent every restaurant in your restaurant data.
+    Save this as variable "restaurantData".
 
     ## Task 2: Process Data
 
-    Create a marker for each element in "restaurantData". Your final code should only include "L.marker" one time.
+    Create a marker for each element in "restaurantData".
+    Your final code should only include "L.marker" one time.
 
     ## Task 3: Add Two Additional Markers
 
-    Add two additional restaurants to your data. You should only need to modify "restaurantData" to do this. Confirm that these new markers are added to your application.
+    Add two additional restaurants to your data.
+    You should only need to modify "restaurantData" to do this.
+    Confirm that these new markers are added to your application.
 
     ## Task 4: Add Popups to Markers
 
@@ -63,10 +73,18 @@
 
     ===================== */
 
-    L.marker([0, 0]).addTo(map);
-    L.marker([0, 0]).addTo(map);
-    L.marker([0, 0]).addTo(map);
+    var restaurantData = [
+      [39.951979, -75.175684, "Rione"]
+      ,[39.952386, -75.174046, "El Rey"]
+      ,[39.951654, -75.174502, "Vic Sushi Bar"]
+      ,[39.952288, -75.174890,"Butcher Bar"]
+    ];
 
+    for (var i = 0; i < restaurantData.length; i++) {
+      marker = new L.marker([restaurantData[i][0],restaurantData[i][1]])
+      .bindPopup(restaurantData[i][2])
+      .addTo(map)
+    }
     /* =====================
 
     End code

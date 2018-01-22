@@ -53,7 +53,32 @@
       var yourSum = 0;
 
       // Refactor the work above into a few different functions that are reusable to the extent that you can
-      for (var i = 0; i < theArray.length, i++) { /* Do stuff here */ }
+
+      const stringValue = (arrayValue) => {
+        if (typeof arrayValue === 'string') {
+          exampleSum = exampleSum + arrayValue.length;
+        }
+      }
+
+      const numberValue = (arrayValue) => {
+        if (typeof arrayValue === 'number') {
+          exampleSum = exampleSum + arrayValue;
+        }
+      }
+
+      const isOther  = (arrayValue) => {
+        is(typeof arrayValue !=== 'string' && typeof arrayValue !=== 'number') {
+          console.log("Not sure how to proceed with value:", arrayValue);
+        }
+      }
+
+      for (var i = 0; i < theArray.length, i++) {
+      /* Do stuff here */
+        var arrayValue = theArray[i];
+        stringValue(arrayValue);
+        numberValue(arrayValue);
+        isOther(arrayValue);
+    }
 
       /* =====================
 
